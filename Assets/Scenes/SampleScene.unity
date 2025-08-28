@@ -238,7 +238,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -8, y: -160}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &86465043
 MonoBehaviour:
@@ -405,7 +405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &95604285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,58 +1462,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Name!
   <Statuses>k__BackingField:
-  - <Name>k__BackingField: ATK
+  - <Type>k__BackingField: 1
     <Value>k__BackingField: 30
     <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: DEF
+  - <Type>k__BackingField: 2
     <Value>k__BackingField: 15
     <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: Health
+  - <Type>k__BackingField: 3
     <Value>k__BackingField: 100
     <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: Critical
+  - <Type>k__BackingField: 4
     <Value>k__BackingField: 20
     <SpritePath>k__BackingField: 
   <Level>k__BackingField: 7
   <reqExp>k__BackingField: 10
   <curExp>k__BackingField: 7
   inventorySlots:
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
-  - <Name>k__BackingField: 
-    <Value>k__BackingField: 0
-    <SpritePath>k__BackingField: 
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
+  - {fileID: 11400000, guid: 721f10243c1115e4e939ca2fead51c73, type: 2}
 --- !u!1 &450100654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,7 +1754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &491149943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,7 +2265,7 @@ RectTransform:
   m_Father: {fileID: 468248401}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2754,7 +2730,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -20, y: 42}
-  m_SizeDelta: {x: 37.68, y: 16.76}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &729577905
 MonoBehaviour:
@@ -4671,9 +4647,9 @@ RectTransform:
   m_Father: {fileID: 92760924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -7, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1340079792
 MonoBehaviour:
@@ -5091,7 +5067,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -20, y: 42}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 37.68, y: 16.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556575638
 MonoBehaviour:

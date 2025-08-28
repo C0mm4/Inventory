@@ -15,7 +15,7 @@ public class UIStatusSlot : MonoBehaviour
 
     public void SetData(Status status)
     {
-        statusNameText.text = status.Name;
+        statusNameText.text = status.Type.ToString();
         statusValueText.text = status.Value.ToString();
         try
         {
