@@ -19,6 +19,10 @@ public class Character : MonoBehaviour
     public int reqExp {  get; private set; }
     [field: SerializeField]
     public int curExp {  get; private set; }
+
+    [Header("Inventory")]
+    [SerializeField]
+    public List<Status> inventorySlots = new(12);
 }
 
 
