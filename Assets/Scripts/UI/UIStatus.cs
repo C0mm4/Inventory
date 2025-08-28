@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIStatus : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Button closeButon;
+
+    private void Start()
     {
-        
+        closeButon.onClick.AddListener(OnClickCloseButton);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClickCloseButton()
     {
-        
+        UIManager.Instance.OpenMainMenu();
     }
 }
