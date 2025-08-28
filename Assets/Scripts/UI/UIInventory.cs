@@ -59,7 +59,10 @@ public class UIInventory : MonoBehaviour
         foreach (var status in player.inventorySlots)
         {
             var go = Instantiate(InventorySlotPref, SlotContentTrans);
-            slots.Add(go.GetComponent<UIInventorySlot>());
+            UIInventorySlot slot = go.GetComponent<UIInventorySlot>();
+            slot.OnClickAction += UpdateUI;
+            slots.Add(slot);
+            
         }
 
         UpdateUI();

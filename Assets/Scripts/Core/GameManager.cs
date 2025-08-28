@@ -18,5 +18,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public Character player;
+    public Character player; 
 }

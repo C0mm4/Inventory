@@ -11,7 +11,16 @@ public class Item : ScriptableObject
     public string Name {  get; private set; }
     [field :SerializeField]
     public List<ItemStatus> AddStatus { get; private set; }
+    private string SpritePath => $"Sprite/Item/{Name}";
+    public Item Instantiate()
+    {
+        return Instantiate(this);
+    }
 
+    public Sprite GetSprite()
+    {
+        return Resources.Load<Sprite>(SpritePath);
+    }
 }
 
 [Serializable]

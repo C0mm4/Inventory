@@ -25,13 +25,17 @@ public class Character : MonoBehaviour
     [SerializeField]
     public List<Item> inventorySlots = new(12);
 
+    public Item currentEquipItem;
+
     public void AddStatus(StatusType type, int value)
     {
+        // 타겟 스테이터스 찾기
         bool isExists = false;
         foreach(var status in Statuses)
         {
             if(status.Type == type)
             {
+                // 스테이터스 반영
                 status.AddValue(value);
                 isExists = true;
 
@@ -49,20 +53,37 @@ public class Character : MonoBehaviour
 
     public void EquipItem(Item targetItem)
     {
+        // 아이템 장착 시 아이템에 들어있는 스테이터스 적용
         for (int i = 0; i < targetItem.AddStatus.Count; i++)
         {
             AddStatus(targetItem.AddStatus[i].Type, targetItem.AddStatus[i].Value);
         }
+        currentEquipItem = targetItem;
     }
 
     public void UnEquipItem(Item targetItem)
     {
+        // 아이템 해제 시 아이템에 들어있는 스테이터스 제거
         for (int i = 0; i < targetItem.AddStatus.Count; i++)
         {
             AddStatus(targetItem.AddStatus[i].Type, -targetItem.AddStatus[i].Value);
         }
+        currentEquipItem = null;
     }
 
+    public void AddItem(Item newItem)
+    {
+        for(int i = 0; i < inventorySlots.Count; i++)
+        {
+            // 빈 슬롯 찾기
+            if(inventorySlots[i] == null)
+            {
+                // 새로운 객체로 만들어서 넣어줌
+                inventorySlots[i] = newItem.Instantiate();
+                return;
+            }
+        }
+    }
 }
 
 
@@ -78,8 +99,7 @@ public class Status
     public StatusType Type { get; private set; }
     [field: SerializeField]
     public int Value {  get; private set; }
-    [field: SerializeField]
-    public string SpritePath {  get; private set; }
+    public string SpritePath => $"Sprite/{Type}";
 
     public void AddValue(int value)
     {
