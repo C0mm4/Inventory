@@ -24,6 +24,7 @@ public class ItemDatamManager : MonoBehaviour
     {
         if (index < 0 || index >= itemDatas.Count) { return null; }
 
+        // 인덱스 아이템 복사해서 반환
         Item targetItem = itemDatas[index].Instantiate();
         return targetItem;
     }

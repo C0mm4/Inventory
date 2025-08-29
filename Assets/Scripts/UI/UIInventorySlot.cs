@@ -13,7 +13,7 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private Image ItemImage;
 
-    public Action OnClickAction;
+    public Action OnClickAction { get; set; }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -22,17 +22,19 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler
             var player = GameManager.instance.player;
             if (player != null)
             {
+                // 장착된 아이템이면 해제
                 if(player.currentEquipItem == item)
                 {
                     player.UnEquipItem(item);
                 }
                 else
                 {
+                    // 이미 장착된게 있으면 해제
                     if(player.currentEquipItem != null)
                     {
                         player.UnEquipItem(player.currentEquipItem);
                     }
-
+                    // 해당 아이템 장착
                     player.EquipItem(item);
                 }
             }
@@ -50,6 +52,7 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler
             return;
         }
 
+        // 장착 시 아웃라인 활성화
         if(GameManager.instance.player.currentEquipItem == item)
         {
             outlineEffect.enabled = true;
@@ -59,6 +62,7 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler
             outlineEffect.enabled = false;
         }
 
+        // 아이템 스프라이트 설정
         ItemImage.sprite = item.GetSprite();
         if(ItemImage.sprite == null)
         {

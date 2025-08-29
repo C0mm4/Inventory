@@ -39,10 +39,12 @@ public class UIInventory : MonoBehaviour
 
     private void OnEnable()
     {
+        // 좌측 데이터 초기화
         PlayerName.text = GameManager.instance.player.Name;
         PlayerEXP.text = $"{GameManager.instance.player.curExp} / {GameManager.instance.player.reqExp}";
         PlayerLv.text = GameManager.instance.player.Level.ToString();
 
+        // 인벤토리 스크롤 최상단으로
         scrollRect.verticalNormalizedPosition = 1f;
         UpdateUI();
     }
@@ -55,17 +57,20 @@ public class UIInventory : MonoBehaviour
 
     private void InitUI()
     {
+        // 인벤토리 슬롯만큼 칸 생성
         slots = new();
         foreach (var status in player.inventorySlots)
         {
             var go = Instantiate(InventorySlotPref, SlotContentTrans);
             UIInventorySlot slot = go.GetComponent<UIInventorySlot>();
+            // 슬롯 칸에 클릭 콜백 등록
             slot.OnClickAction += UpdateUI;
             slots.Add(slot);
             
         }
 
         UpdateUI();
+        // 캔버스 강제 업데이트 (ContextSizeFilter 계산)
         Canvas.ForceUpdateCanvases();
         scrollRect.verticalNormalizedPosition = 1f;
     }
