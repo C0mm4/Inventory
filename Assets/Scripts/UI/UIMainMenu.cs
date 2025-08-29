@@ -10,6 +10,8 @@ public class UIMainMenu : MonoBehaviour
     private Button StatusButton;
     [SerializeField]
     private Button InventoryButton;
+    [SerializeField]
+    private Button AddItemButton;
 
     [SerializeField]    
     private TMP_Text PlayerName;
@@ -22,10 +24,13 @@ public class UIMainMenu : MonoBehaviour
     {
         StatusButton.onClick.AddListener(OnClickStatusUIButton);
         InventoryButton.onClick.AddListener(OnClickInventoryButton);
+        AddItemButton.onClick.AddListener(OnClickAddItemButton);
     }
 
     private void OnEnable()
     {
+        Debug.Log(GameManager.instance);
+        Debug.Log(GameManager.instance.player);
         PlayerName.text = GameManager.instance.player.Name;
         PlayerEXP.text = $"{GameManager.instance.player.curExp} / {GameManager.instance.player.reqExp}";
         PlayerLv.text = GameManager.instance.player.Level.ToString();
@@ -39,5 +44,16 @@ public class UIMainMenu : MonoBehaviour
     public void OnClickInventoryButton()
     {
         UIManager.Instance.OpenInventory();
+    }
+
+    public void OnClickAddItemButton()
+    {
+        var item = ItemDatamManager.Instance.CreateRandomItem();
+        if (item == null)
+        {
+            return;
+        }
+
+        GameManager.instance.player.AddItem(item);
     }
 }

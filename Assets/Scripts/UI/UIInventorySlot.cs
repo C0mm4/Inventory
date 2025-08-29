@@ -43,6 +43,13 @@ public class UIInventorySlot : MonoBehaviour, IPointerClickHandler
     public void SetData(Item item)
     {
         this.item = item;
+        if (item == null)
+        {
+            ItemImage.enabled = false;
+            outlineEffect.enabled = false;
+            return;
+        }
+
         if(GameManager.instance.player.currentEquipItem == item)
         {
             outlineEffect.enabled = true;

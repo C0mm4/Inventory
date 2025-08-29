@@ -18,5 +18,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        UIManager.Instance.OpenMainMenu();
+    }
+
     public Character player; 
 }
