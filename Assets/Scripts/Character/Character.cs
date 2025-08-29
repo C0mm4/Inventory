@@ -99,7 +99,7 @@ public class Status
     public StatusType Type { get; private set; }
     [field: SerializeField]
     public int Value {  get; private set; }
-    public string SpritePath => $"Sprite/{Type}";
+    public string SpritePath => $"Sprite/Status/{Type}";
 
     public void AddValue(int value)
     {
